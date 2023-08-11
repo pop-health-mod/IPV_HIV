@@ -347,28 +347,28 @@ recode_dhs_c <- function(dat) {
   
   #Add region 
   
-  if (dat$SurveyId %in% c("BJ2012DHS", "BJ2017DHS", "BF2010DHS", "CI2012DHS", "GM2013DHS", "GH2003DHS","GH2008DHS", "GH2014DHS", "GN2005DHS", "GN2012DHS", 
-                          "GN2018DHS", "GM2019DHS", "LB2007DHS", "LB2013DHS", "LB2019DHS","ML2006DHS", "ML2012DHS", "ML2018DHS", "NI2012DHS", "NG2003DHS","NG2008DHS", "NG2013DHS", "NG2018DHS", "SN2005DHS", "SN2010DHS", "SN2014DHS", "SN2015DHS", "SN2016DHS", "SN2017DHS", "SL2013DHS", "SL2019DHS", "TG2013DHS")) {
+  if (all(dat$SurveyId %in% c("BJ2012DHS", "BJ2017DHS", "BF2010DHS", "CI2012DHS", "GM2013DHS", "GH2003DHS","GH2008DHS", "GH2014DHS", "GN2005DHS", "GN2012DHS", 
+                          "GN2018DHS", "GM2019DHS", "LB2007DHS", "LB2013DHS", "LB2019DHS","ML2006DHS", "ML2012DHS", "ML2018DHS", "NI2012DHS", "NG2003DHS","NG2008DHS", "NG2013DHS", "NG2018DHS", "SN2005DHS", "SN2010DHS", "SN2014DHS", "SN2015DHS", "SN2016DHS", "SN2017DHS", "SL2013DHS", "SL2019DHS", "TG2013DHS"))) {
     dat$region <- 'Western Africa' }
-  else if (dat$SurveyId  %in% c("SZ2016PHIA", "LS2004DHS", "LS2009DHS", "LS2014DHS", 
-                                "NM2000DHS", "NM2013DHS", "ZA2016DHS", "ZA2002SABSSM", "ZA2017SABSSM")) {
+  else if (all(dat$SurveyId  %in% c("SZ2016PHIA", "LS2004DHS", "LS2009DHS", "LS2014DHS", 
+                                "NM2000DHS", "NM2013DHS", "ZA2016DHS", "ZA2002SABSSM", "ZA2017SABSSM"))) {
     dat$region <- 'Southern Africa'}
-  else if (dat$SurveyId %in%  c("BU2010DHS", "BU2016DHS", "KM2012DHS", "ET2005DHS", "ET2011DHS", "ET2016DHS", 
-                                "ET2000DHS", "KE2003DHS", "KE2008DHS", "KE2012AIS", "KE2014DHS", "MD2004DHS", "MW2000DHS", "MW2004DHS", "MW2010DHS", "MW2015DHS", "MW2015PHIA", "MZ2003DHS", "MZ2011DHS", "MZ2015AIS", "RW2000DHS", "RW2005DHS", "RW2010DHS", "RW2015DHS", "RW2019DHS", "TZ2004DHS", "TZ2010DHS", "TZ2012AIS", "TZ2015DHS", "UG2000DHS","UG2006DHS" , "UG2011DHS", "UG2016DHS", "ZM2002DHS", "ZM2007DHS","ZM2013DHS", "ZM2016PHIA", "ZM2018DHS", "ZW2005DHS", "ZW2010DHS", "ZW2015DHS")) {
+  else if (all(dat$SurveyId %in%  c("BU2010DHS", "BU2016DHS", "KM2012DHS", "ET2005DHS", "ET2011DHS", "ET2016DHS", 
+                                "ET2000DHS", "KE2003DHS", "KE2008DHS", "KE2012AIS", "KE2014DHS", "MD2004DHS", "MW2000DHS", "MW2004DHS", "MW2010DHS", "MW2015DHS", "MW2015PHIA", "MZ2003DHS", "MZ2011DHS", "MZ2015AIS", "RW2000DHS", "RW2005DHS", "RW2010DHS", "RW2015DHS", "RW2019DHS", "TZ2004DHS", "TZ2010DHS", "TZ2012AIS", "TZ2015DHS", "UG2000DHS","UG2006DHS" , "UG2011DHS", "UG2016DHS", "ZM2002DHS", "ZM2007DHS","ZM2013DHS", "ZM2016PHIA", "ZM2018DHS", "ZW2005DHS", "ZW2010DHS", "ZW2015DHS"))) {
     dat$region <- 'Eastern Africa' }
-  else if (dat$SurveyId %in% c("AO2015DHS", "CD2007DHS", "CM2004DHS", "CM2011DHS", "CM2018DHS", "TD2004DHS", "TD2014DHS", "CG2011DHS", "CD2013DHS", "GA2012DHS", "GA2000DHS", "ST2008DHS")) {
+  else if (all(dat$SurveyId %in% c("AO2015DHS", "CD2007DHS", "CM2004DHS", "CM2011DHS", "CM2018DHS", "TD2004DHS", "TD2014DHS", "CG2011DHS", "CD2013DHS", "GA2012DHS", "GA2000DHS", "ST2008DHS"))) {
     dat$region <- 'Central Africa'}
   
   # ad period of study 
-  if (dat$SurveyId %in% c("CM2004DHS", "KE2003DHS", "MW2004DHS")){
+  if (all(dat$SurveyId %in% c("CM2004DHS", "KE2003DHS", "MW2004DHS"))) {
     dat$period <- '2000-2004' } 
-  else if (dat$SurveyId  %in% c("RW2005DHS", "UG2006DHS", "ML2006DHS", "CD2007DHS", "LB2007DHS", "GH2008DHS", "NG2008DHS", "ZW2005DHS", "ZM2007DHS", "ST2008DHS", "KE2008DHS")) {
+  else if (all(dat$SurveyId  %in% c("RW2005DHS", "UG2006DHS", "ML2006DHS", "CD2007DHS", "LB2007DHS", "GH2008DHS", "NG2008DHS", "ZW2005DHS", "ZM2007DHS", "ST2008DHS", "KE2008DHS"))) {
     dat$period <- '2005-2009'} 
-  else if (dat$SurveyId %in%  c("MW2010DHS", "RW2010DHS", "TZ2010DHS", "ZM2010DHS", "BF2010DHS", "MZ2011DHS", "CI2012DHS", "UG2011DHS","GA2012DHS", "KM2012DHS", "ML2012DHS",
-                                "NM2013DHS", "GM2012DHS", "GM2013DHS", "NG2013DHS", "CD2013DHS", "ZM2013DHS", "TD2014DHS", "SL2013DHS", "TG2013DHS", "KE2014DHS", "ZW2010DHS", "ZW2013DHS")) {
+  else if (all(dat$SurveyId %in%  c("MW2010DHS", "RW2010DHS", "TZ2010DHS", "ZM2010DHS", "BF2010DHS", "MZ2011DHS", "CI2012DHS", "UG2011DHS","GA2012DHS", "KM2012DHS", "ML2012DHS",
+                                "NM2013DHS", "GM2012DHS", "GM2013DHS", "NG2013DHS", "CD2013DHS", "ZM2013DHS", "TD2014DHS", "SL2013DHS", "TG2013DHS", "KE2014DHS", "ZW2010DHS", "ZW2013DHS"))) {
     dat$period <- '2010-2014' } 
-  else if (dat$SurveyId %in% c("MW2015DHS", "RW2015DHS",  "MZ2015AIS", "AO2015DHS", "ZW2015DHS", "BU2016DHS", "ET2016DHS", "UG2016DHS", "SN2017DHS", "ZA2016DHS", "CM2018DHS", "ZM2018DHS", "ML2018DHS", "RW2019DHS", "NG2018DHS",  "TZ2015DHS",
-                               "SL2019DHS", "LB2019DHS", "GM2019DHS")) {
+  else if (all(dat$SurveyId %in% c("MW2015DHS", "RW2015DHS",  "MZ2015AIS", "AO2015DHS", "ZW2015DHS", "BU2016DHS", "ET2016DHS", "UG2016DHS", "SN2017DHS", "ZA2016DHS", "CM2018DHS", "ZM2018DHS", "ML2018DHS", "RW2019DHS", "NG2018DHS",  "TZ2015DHS",
+                               "SL2019DHS", "LB2019DHS", "GM2019DHS"))) {
     dat$period <- '2015-2019'} 
   
   else {dat$period<- NA}
@@ -472,7 +472,7 @@ recode_dhs_c <- function(dat) {
 
 ## Make all 3 decisions on their own or with their partners. 
 ## Health  MBD (missing by design) in Liberia
- if(dat$SurveyId %in% c("LB2007DHS")) {
+ if(all(dat$SurveyId %in% c("LB2007DHS")))  {
  dat$decision =apply(dat[ , c("purchase", "visit")], 1, function(k) { ifelse(all(k== 1), 1,
                                                                                                 ifelse (any (is.na(k)), NA,
                                                                                                                ifelse (any (k==0, na.rm = TRUE), 0, NA)))}) 
@@ -494,10 +494,10 @@ recode_dhs_c <- function(dat) {
  
 
  # Lifetime number of sexual partners: Women 
- if(dat$SurveyId %in% c("RW2005DHS")) {
+ if(all(dat$SurveyId %in% c("RW2005DHS"))) {
    dat$life_w <- set_na(dat$s539, 96:99)
  } else {
-   if(dat$SurveyId %in% c("CM2004DHS")) {
+   if(all(dat$SurveyId %in% c("CM2004DHS"))) {
      dat$life_w <- set_na(dat$s523a, c(0,95:99)) #if never had sex, code as NA 
    } else {
      dat$life_w <- set_na(dat$v836, 96:99)
@@ -508,10 +508,10 @@ recode_dhs_c <- function(dat) {
 
 
  # Lifetime number of sexual partners: men 
- if(dat$SurveyId %in% c("RW2005DHS")) {
+ if(all(dat$SurveyId %in% c("RW2005DHS"))) {
    dat$life_m <- set_na(dat$sm438, 96:99)
  } else {
-   if(dat$SurveyId %in% c("CM2004DHS")) {
+   if(all(dat$SurveyId %in% c("CM2004DHS"))) {
      dat$life_m <- set_na(dat$ms523a, c(0,95:99)) #if never had sex, code as NA 
    } else {
      dat$life_m <- set_na(dat$mv836, 96:99)
@@ -690,26 +690,27 @@ dat2 <- fun2(x = dat[ , c("had_mostrecw","had_2ndrecw","had_3rdrecw", 'partners_
  ## Important to ensure that 'missing by design is accounted for [ any NA is coded as NA, unless its NA by design]
  # Attack is collected in these 8 surveys. 
  
- if (dat$SurveyId %in% c("CM2004DHS","CD2007DHS", "KE2003DHS","MW2004DHS", "RW2005DHS","BF2010DHS","CI2012DHS","ML2006DHS")) {
+ if (all(dat$SurveyId %in% c("CM2004DHS","CD2007DHS", "KE2003DHS","MW2004DHS", "RW2005DHS","BF2010DHS","CI2012DHS","ML2006DHS"))) {
    dat$ever_phys=apply(dat[ , c("push","slap","punch","kick","choke","threatAttack","attack")], 1, function(y) { ifelse(any(y== 1, na.rm = TRUE), "Yes",
                                                                                                                         ifelse (all (y==0), "No", NA))})
  }
  ## Arm twist collected in all surveys except for these 10 surveys
- else if (dat$SurveyId %ni% c("CM2004DHS","CD2007DHS", "KE2003DHS","MW2004DHS", "RW2005DHS", "ZW2005DHS","BF2010DHS","CI2012DHS","ML2006DHS", "ZA2016DHS", "ZW2005DHS", "KE2008DHS", "LB2007DHS", "TZ2010DHS", "ZM2007DHS")) { 
+ else if (all(dat$SurveyId %ni% c("CM2004DHS","CD2007DHS", "KE2003DHS","MW2004DHS", "RW2005DHS", "ZW2005DHS","BF2010DHS","CI2012DHS","ML2006DHS", "ZA2016DHS", "ZW2005DHS", "KE2008DHS", 
+                                  "LB2007DHS", "TZ2010DHS", "ZM2007DHS"))) { 
    dat$ever_phys=apply(dat[ , c("push","slap","punch","kick","choke","threatAttack")], 1, function(y) { ifelse(any(y== 1, na.rm = TRUE), "Yes",
                                                                                                                ifelse (all (y==0), "No", NA))}) 
  }
   ## SA collects only these 4 compoenents 
- else if (dat$SurveyId %in% c("ZA2016DHS")) {
+ else if (all(dat$SurveyId %in% c("ZA2016DHS"))) {
    dat$ever_phys=apply(dat[ , c("push","kick","choke","threatAttack")], 1, function(y) { ifelse(any(y== 1, na.rm = TRUE), "Yes",
                                                                                                 ifelse (all (y==0), "No", NA))}) 
  }
  
- else if(dat$SurveyId %in% c("ZW2005DHS")) { 
+ else if(all(dat$SurveyId %in% c("ZW2005DHS"))) { 
    dat$ever_phys=apply(dat[ , c("push","slap","punch","choke","threatAttack", "attack")], 1, function(k) { ifelse(any(k== 1, na.rm = TRUE), "Yes",
                                                                                                                   ifelse (all (k==0), "No", NA))})
  }
- else if(dat$SurveyId %in% c("KE2008DHS", "LB2007DHS", "TZ2010DHS", "ZM2007DHS")) { 
+ else if(all(dat$SurveyId %in% c("KE2008DHS", "LB2007DHS", "TZ2010DHS", "ZM2007DHS"))) { 
    dat$ever_phys=apply(dat[ , c("push","slap","punch","kick", "choke")], 1, function(k) { ifelse(any(k== 1, na.rm = TRUE), "Yes",
                                                                                                  ifelse (all (k==0), "No", NA))})
  }
@@ -754,9 +755,9 @@ dat2 <- fun2(x = dat[ , c("had_mostrecw","had_2ndrecw","had_3rdrecw", 'partners_
  ##' Create frequency variable 
  ##' Continuous: If any violent acts happened >0 times in the past 12 months code 1. If all types are "None" code as No; if either is NA, code as NA; if all are NA, code as NA. 
  ##' Categorical: Now that we have replaced all missing variables with 7, the only remaining missing values are truly NA. 
- if(dat$SurveyId %in% c("CM2004DHS","MW2004DHS", "KE2003DHS", 
+ if(all(dat$SurveyId %in% c("CM2004DHS","MW2004DHS", "KE2003DHS", 
                         "RW2005DHS",  
-                        "ML2006DHS")){
+                        "ML2006DHS"))){
    dat$recent_viol=apply(dat[, c("fPush","fSlap","fPunch","fKick","fStrangle","fThreatKnife", "fAttack", "fForceSex", "fEmoSex")],1,    function(x) { ifelse(any(x > 0, na.rm = TRUE), "Yes", 
                                                                                                                                                              ifelse (all (x==0), "No", NA))})
    dat$recent_viol<- ifelse (dat$any_viol=="No" & is.na(dat$recent_viol), "No", dat$recent_viol)
@@ -771,7 +772,7 @@ dat2 <- fun2(x = dat[ , c("had_mostrecw","had_2ndrecw","had_3rdrecw", 'partners_
  
 
  # ARV  intake:  self reported  for men 
- if(dat$SurveyId %in% c("MZ2015AIS")) {
+ if(all(dat$SurveyId %in% c("MZ2015AIS"))) {
    dat$ever<- as.integer(set_na(dat$sm518, 8:9)) ## ever taking ARVs for mozambique
    dat$curr<- as.integer(set_na(dat$sm519, 9)) 
  } 
@@ -780,17 +781,17 @@ dat2 <- fun2(x = dat[ , c("had_mostrecw","had_2ndrecw","had_3rdrecw", 'partners_
    }
 
  # ARV  intake:  biomarker-based  for men 
- if(dat$SurveyId %in% c("MZ2015AIS")) {
+ if(all(dat$SurveyId %in% c("MZ2015AIS"))) {
    dat$arv_bio_m <- as.integer(set_na(dat$sbioarv_m, 9)) 
  } else  { dat$arv_bio_m<-NA }
  
  
  # Create self-reported/bio variable for men 
- if(dat$SurveyId %in% c("MZ2015AIS")) 
+ if(all(dat$SurveyId %in% c("MZ2015AIS")))
  { dat$arv_self_m=apply(dat[, c("curr","ever")],1, function(y) { ifelse(any(y== 0, na.rm = TRUE), 0, 
-                                                                      ifelse (is.na(all(y)), NA, 1 ))})     
+                                                                       ifelse (all(is.na(y)), NA, 1 ))})      
  dat$arv_m=apply(dat[, c("arv_self_m","arv_bio_m")],1, function(y) { ifelse(any(y== 1, na.rm = TRUE), "Yes",  
-                                                                      ifelse (is.na(all(y)), NA, "No" ))})
+                                                                       ifelse (all(is.na(y)), NA, "No" ))})  
  
  
  } else { dat$arv_m<- NA
@@ -798,7 +799,7 @@ dat2 <- fun2(x = dat[ , c("had_mostrecw","had_2ndrecw","had_3rdrecw", 'partners_
  
  
  # ARV  intake:  self reported  for women 
- if(dat$SurveyId %in% c("MZ2015AIS")) {
+ if(all(dat$SurveyId %in% c("MZ2015AIS"))) {
    dat$everw<- as.integer(set_na(dat$s718, 8:9)) ## ever taking ARVs for mozambique
    dat$currw<- as.integer(set_na(dat$s719, 9)) 
  } 
@@ -808,17 +809,17 @@ dat2 <- fun2(x = dat[ , c("had_mostrecw","had_2ndrecw","had_3rdrecw", 'partners_
  
  
  # ARV  intake:  biomarker-based  for women 
- if(dat$SurveyId %in% c("MZ2015AIS")) {
+ if(all(dat$SurveyId %in% c("MZ2015AIS"))) {
    dat$arv_bio_w <- as.integer(set_na(dat$sbioarv_w, 9)) 
  } else  { dat$arv_bio_w<-NA }
  
  
  #  create self-reported/bio variable for women 
- if(dat$SurveyId %in% c("MZ2015AIS")) 
+ if(all(dat$SurveyId %in% c("MZ2015AIS")))
  { dat$arv_self_w=apply(dat[, c("currw","everw")],1, function(y) { ifelse(any(y== 0, na.rm = TRUE), 0,
-                                                                        ifelse (is.na(all(y)), NA, 1 ))})   
+                                                                          ifelse (all(is.na(y)), NA, 1 ))})    
  dat$arv_w=apply(dat[, c("arv_self_w","arv_bio_w")],1, function(y) { ifelse(any(y== 1, na.rm = TRUE), "Yes",  
-                                                                            ifelse (is.na(all(y)), NA, "No" ))})
+                                                                           ifelse (all(is.na(y)), NA, "No" ))})  
  
  
  } else { dat$arv_w<- NA
@@ -826,7 +827,7 @@ dat2 <- fun2(x = dat[ , c("had_mostrecw","had_2ndrecw","had_3rdrecw", 'partners_
  
 
  ## Viral load - male
- if(dat$SurveyId %in% c("MZ2015AIS"))  {
+ if(all(dat$SurveyId %in% c("MZ2015AIS")))  {
    for(i in 1:nrow(dat)) {
      if (dat$sviral_m[i] %in% c(0:999)) {
        dat$vlsup_m[i] <- 1 }
@@ -846,7 +847,7 @@ dat2 <- fun2(x = dat[ , c("had_mostrecw","had_2ndrecw","had_3rdrecw", 'partners_
  
  
  ## Viral load - female
- if(dat$SurveyId %in% c("MZ2015AIS"))  {
+ if(all(dat$SurveyId %in% c("MZ2015AIS"))) {
    for(i in 1:nrow(dat)) {
      if (dat$sviral_w[i] %in% c(0:999)) {
        dat$vlsup_w[i] <- 1 }
@@ -868,9 +869,9 @@ dat2 <- fun2(x = dat[ , c("had_mostrecw","had_2ndrecw","had_3rdrecw", 'partners_
  # current marriage status so as to exclude widowed for certain surveys. 
  dat$wdw<-factor(set_na(dat$v501, 9))
  
- if(dat$SurveyId %in% c("CM2004DHS", "KE2003DHS", "MW2004DHS", 
+ if(all(dat$SurveyId %in% c("CM2004DHS", "KE2003DHS", "MW2004DHS", 
                         "RW2005DHS", "ZW2005DHS", "LB2007DHS",
-                        "ML2006DHS", "NG2008DHS")) { 
+                        "ML2006DHS", "NG2008DHS"))) { 
    dat<-dat[which(dat$DVSel %in% 1 & dat$evermarried %in% 1 & dat$wdw %ni% 3), ]
  } 
  else { dat<-dat[which(dat$DVSel %in% 1 & dat$evermarried %in% 1), ] 
